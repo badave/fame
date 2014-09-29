@@ -5,6 +5,7 @@ define(function(require) {
   var HomeView = require('./views/home/home');
 
   var App = Woodhouse.Router.extend({
+    $el: $("body"),
     initialize: function() {
       Backbone.history.start();
     },
@@ -13,8 +14,11 @@ define(function(require) {
       "/": "index"
     },
 
+    // Normal place to start is home
     index: function() {
-      debugger
+      var view = new HomeView();
+      view.render();
+      this.$el.html(view.$el);
     }
   });
 

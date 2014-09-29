@@ -78,7 +78,11 @@ app.use(express.static(__dirname + '/public'));
 app.use(router.url, router);
 
 app.get('/', function(req, res) {
-  res.render("index");
+  var noun = "Ryan Gosling";
+
+  res.render("index", {
+    noun: noun
+  });
 });
 
 console.log("Starting server on port " + port);

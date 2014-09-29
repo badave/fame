@@ -9,6 +9,11 @@ define(function(require) {
     initialize: function(options) {
       this.bindWindowEvents();
     },
+    templateContext: function() {
+      return {
+        word: "El Manana will always be tomorrow"
+      }
+    },
     template: function(context) {
       return jade.render('home', _.extend(context, {
         user: APP.user && APP.user.toJSON()
