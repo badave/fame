@@ -5,12 +5,13 @@ require.config({
     //to load locally
     "jquery": [
       "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min",
-      "libs/jquery/dist/jquery"
+      "/js/libs/jquery/dist/jquery"
     ],
-    "videojs": "libs/video-js/video",
-    "underscore": "libs/underscore/underscore",
-    "backbone": "libs/backbone/backbone",
-    "woodhouse": "libs/woodhouse/woodhouse",
+    "videojs": "/js/libs/video-js/video",
+    "underscore": "/js/libs/underscore/underscore",
+    "underscore-mixins": "/js/mixins/underscore",
+    "backbone": "/js/libs/backbone/backbone",
+    "woodhouse": "/js/libs/woodhouse/woodhouse",
     "bootstrap": "libs/bootstrap/dist/js/bootstrap",
     "bootstrap-tagsinput": "libs/bootstrap-tagsinput/dist/bootstrap-tagsinput",
     "bluebird": "libs/bluebird/js/browser/bluebird",
@@ -35,6 +36,9 @@ require.config({
     },
     "videojs-youtube": {
       "deps": ["videojs"]
+    },
+    "underscore-mixins": {
+      deps: ["underscore"]
     }
   },
   //how long the it tries to load a script before giving up, the default is 7

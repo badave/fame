@@ -10,7 +10,7 @@ var config = module.exports = {
   cachebust: (new Date()).getTime() // timestamp when process was started
 };
 
-config.title = "Pornodora";
+config.title = "Fame";
 
 config.database = {
   "mongodbs": {
@@ -19,10 +19,8 @@ config.database = {
 };
 
 if (environment === "development") {
-  config.title = "Classy Project";
-
   if (process.env['LOCALDB']) {
-    config.database.mongodbs.primary = "mongodb://localhost:27017/classyproject";
+    config.database.mongodbs.primary = "mongodb://localhost:27017/fame";
   }
 }
 

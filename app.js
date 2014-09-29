@@ -22,7 +22,7 @@ app.use(compression());
 
 app.use(sessions({
   cookieName: 'session', // cookie name dictates the key name added to the request object
-  secret: 'afjlk23u4908134ujfskadnvm13984u1o', // should be a large unguessable string
+  secret: 'sh1#(*$)(@*#23asdfasd123erloasdfasdfckholmasdfasdfesisthe19581092830192slkjfsdf', // should be a large unguessable string
   duration: 24 * 60 * 60 * 1000 * 365 * 100, // how long the session will stay valid in ms
   activeDuration: 1000 * 60 * 60 * 24, // if expiresIn < activeDuration, the session will be extended by activeDuration milliseconds
   cookie: {
@@ -32,7 +32,7 @@ app.use(sessions({
 
 app.use(sessions({
   cookieName: 'cookie', // cookie name dictates the key name added to the request object
-  secret: '123098102831lkjsdfa1210293812ljkkj', // should be a large unguessable string
+  secret: 'waskdfjh1209480349812341029831928301kljsdfljerhtehrslkjf109283asdfa', // should be a large unguessable string
   duration: 24 * 60 * 60 * 1000 * 365 * 100, // how long the session will stay valid in ms
   activeDuration: 1000 * 60 * 60 * 24 // if expiresIn < activeDuration, the session will be extended by activeDuration milliseconds
 }));
@@ -63,24 +63,12 @@ app.use(jadeBrowser('/js/templates.js', '**', {
 
 
 // Controllers
-var FeelController = require('./controllers/feel');
-var VideoController = require('./controllers/video');
 var UserController = require('./controllers/user');
-var ChannelController = require('./controllers/channel');
 
 var router = new Bootie.Router({
   version: "v1",
   controllers: {
     user: new UserController({
-      db: database.mongodbs.primary
-    }),
-    video: new VideoController({
-      db: database.mongodbs.primary
-    }),
-    feel: new FeelController({
-      db: database.mongodbs.primary
-    }),
-    channel: new ChannelController({
       db: database.mongodbs.primary
     })
   }
