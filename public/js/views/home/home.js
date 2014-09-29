@@ -7,8 +7,6 @@ define(function(require) {
   // Acts as a layout for multiple backbone views
   return Woodhouse.View.extend({
     initialize: function(options) {
-      this.videos = options.videos;
-      this.channels = options.channels;
       this.bindWindowEvents();
     },
     template: function(context) {
