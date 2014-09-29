@@ -3,7 +3,6 @@ define(function(require) {
 
   var User = require('../../models/user');
   var APP = require('../../constants');
-  require('bootstrap-tagsinput');
 
   return Woodhouse.View.extend({
     tagName: 'form',

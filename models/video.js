@@ -1,13 +1,12 @@
 var Base = require('./base');
 
 module.exports = Base.extend({
-  urlRoot: "videos",
+  urlRoot: "words",
 
   schema: {
-  	'title': 'string',
-  	'url': 'string',
-  	'poster': 'string',
-  	'tags': 'array',
-  	'description': 'string'
+  	'word': 'string',
+  	'known': 'number',
+  	'unknown': 'number',
+  	'total': 'number'
   }
 });

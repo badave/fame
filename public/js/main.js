@@ -13,7 +13,6 @@ require.config({
     "backbone": "/js/libs/backbone/backbone",
     "woodhouse": "/js/libs/woodhouse/woodhouse",
     "bootstrap": "libs/bootstrap/dist/js/bootstrap",
-    "bootstrap-tagsinput": "libs/bootstrap-tagsinput/dist/bootstrap-tagsinput",
     "bluebird": "libs/bluebird/js/browser/bluebird",
     "videojs-youtube": "libs/videojs-youtube/src/youtube"
   },
@@ -30,9 +29,6 @@ require.config({
     },
     "bootstrap": {
       "deps": ["jquery"]
-    },
-    "bootstrap-tagsinput": {
-      "deps": ["bootstrap"]
     },
     "videojs-youtube": {
       "deps": ["videojs"]
@@ -56,12 +52,13 @@ require([
   'bootstrap'
   ], function(jquery, _, Backbone, jade, Woodhouse, App) {
     var User = require('./models/user');
-    var user = new User({"_id": "me"});
+    var user = new User({ "_id": "me"});
     var APP = require('./constants');
+
+    APP.user = user;
 
     user.fetch({
       success: function() {
-        APP.user = user;
         new App;
       },
       error: function() {
