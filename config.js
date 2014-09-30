@@ -14,7 +14,7 @@ config.title = "Fame";
 
 config.database = {
   "mongodbs": {
-    "primary": process.env['MONGOLAB_URI'] || "mongodb://heroku_app26732105:189s1s2gucuno2cnigec3blca2@ds037698.mongolab.com:37698/heroku_app26732105",
+    "primary": process.env['MONGOLAB_URI'] || "mongodb://heroku_app30150485:s8rvvqlnesnjkeaujnmnn5dcph@ds041150.mongolab.com:41150/heroku_app30150485",
   }
 };
 
