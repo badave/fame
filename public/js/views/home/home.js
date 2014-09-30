@@ -52,6 +52,9 @@ define(function(require) {
       e.preventDefault();
       e.stopPropagation();
       this.model.set('known', true);
+
+      this.$el.addClass('action-taken');
+
       this.model.saveResponse({}, {
         success: this.knownSuccessHandler.bind(this),
         error: this.responseErrorHandler.bind(this)
@@ -62,6 +65,7 @@ define(function(require) {
       e.preventDefault();
       e.stopPropagation();
       this.model.set('unknown', true);
+      this.$el.addClass('action-taken');
       this.model.saveResponse({}, {
         success: this.knownSuccessHandler.bind(this),
         error: this.responseErrorHandler.bind(this)
@@ -75,6 +79,7 @@ define(function(require) {
       this.index = _.random(0, this.collection.length - 1);
       // this should remove seen words as we go along
       this.model = this.collection.models[this.index];
+      this.$el.removeClass('action-taken');
       this.render();
 
       // this fetch should bring in more and NOT reset the collection
