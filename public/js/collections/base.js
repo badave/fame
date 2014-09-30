@@ -1,6 +1,6 @@
 define(function(require) {
 	var Woodhouse = require('woodhouse');
-	var LIMIT = 20;
+	var LIMIT = 10;
 
 	return Woodhouse.Collection.extend({
 		initialize: function() {
@@ -8,7 +8,7 @@ define(function(require) {
 		
 			this.params = {
 				limit: LIMIT,
-				sort: 'updated',
+				sort: 'name',
 				order: 'desc',
 				skip: 0,
 				offset: 0

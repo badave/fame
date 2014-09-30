@@ -64,11 +64,15 @@ app.use(jadeBrowser('/js/templates.js', '**', {
 
 // Controllers
 var UserController = require('./controllers/user');
+var WordController = require('./controllers/word');
 
 var router = new Bootie.Router({
   version: "v1",
   controllers: {
     user: new UserController({
+      db: database.mongodbs.primary
+    }),
+    word: new WordController({
       db: database.mongodbs.primary
     })
   }
@@ -78,11 +82,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(router.url, router);
 
 app.get('/', function(req, res) {
-  var noun = "Ryan Gosling";
-
-  res.render("index", {
-    noun: noun
-  });
+  res.render("index");
 });
 
 console.log("Starting server on port " + port);

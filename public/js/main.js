@@ -7,14 +7,12 @@ require.config({
       "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min",
       "/js/libs/jquery/dist/jquery"
     ],
-    "videojs": "/js/libs/video-js/video",
     "underscore": "/js/libs/underscore/underscore",
     "underscore-mixins": "/js/mixins/underscore",
     "backbone": "/js/libs/backbone/backbone",
     "woodhouse": "/js/libs/woodhouse/woodhouse",
     "bootstrap": "libs/bootstrap/dist/js/bootstrap",
     "bluebird": "libs/bluebird/js/browser/bluebird",
-    "videojs-youtube": "libs/videojs-youtube/src/youtube"
   },
   shim: {
     "backbone": {
@@ -29,9 +27,6 @@ require.config({
     },
     "bootstrap": {
       "deps": ["jquery"]
-    },
-    "videojs-youtube": {
-      "deps": ["videojs"]
     },
     "underscore-mixins": {
       deps: ["underscore"]
@@ -54,7 +49,6 @@ require([
     var User = require('./models/user');
     var user = new User({ "_id": "me"});
     var APP = require('./constants');
-
     APP.user = user;
 
     user.fetch({
@@ -65,5 +59,4 @@ require([
         new App;
       }
     })
-
 });

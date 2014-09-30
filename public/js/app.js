@@ -3,6 +3,7 @@ define(function(require) {
   var Woodhouse = require('woodhouse');
 
   var HomeView = require('./views/home/home');
+  var WordCollection = require('./collections/word');
 
   var App = Woodhouse.Router.extend({
     $el: $("body"),
@@ -16,9 +17,28 @@ define(function(require) {
 
     // Normal place to start is home
     index: function() {
-      var view = new HomeView();
-      view.render();
-      this.$el.html(view.$el);
+      var loadWords = function(done) {
+        var words = new WordCollection();
+        words.fetch({
+          success: function(words) {
+            done(null, words);
+          },
+          error: function(response) {
+            console.error(response);
+            setTimeout(function() {
+              loadWords(done);  
+            }, 50);
+          }
+        });
+      }
+
+      loadWords(function(error, words) {
+        var view = new HomeView({
+          collection: words
+        });
+        view.render();
+        this.$el.html(view.$el);
+      }.bind(this));
     }
   });
 
