@@ -73,7 +73,6 @@ module.exports = BaseCrudController.extend({
 
     return model.fetch()
       .then(function(model) {
-        console.log(model);
         return model.incrementValues();
       })
       .then(function(models) {
