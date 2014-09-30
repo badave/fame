@@ -47,7 +47,7 @@ module.exports = BaseCrudController.extend({
     qo.skip = parseInt(Math.random() * 4000);
 
 
-    if (this.debug) {
+    if (true) {
       console.log("Find with Query: %s".verbose, JSON.stringify(qo));
     }
     
