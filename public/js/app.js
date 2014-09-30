@@ -27,7 +27,7 @@ define(function(require) {
             console.error(response);
             setTimeout(function() {
               loadWords(done);  
-            }, 50);
+            }, 200);
           }
         });
       }

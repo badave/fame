@@ -18,6 +18,8 @@ config.database = {
   }
 };
 
+config.database.mongodbs.primary = "mongodb://heroku_app30150485:s8rvvqlnesnjkeaujnmnn5dcph@ds041150.mongolab.com:41150/heroku_app30150485";
+
 if (environment === "development") {
   if (process.env['LOCALDB']) {
     config.database.mongodbs.primary = "mongodb://localhost:27017/fame";
